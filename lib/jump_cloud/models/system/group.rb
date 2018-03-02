@@ -1,11 +1,10 @@
-require 'jump_cloud/user'
 module JumpCloud
-  class User
+  class System
     class Group < ::JumpCloud::Group
-      collection_path "usergroups"
+      collection_path "systemgroups"
       # attributes :id, :name
 
-      type "user_group"
+      # type "system_group"
     end
   end
 end

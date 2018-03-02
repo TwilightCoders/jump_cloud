@@ -1,4 +1,3 @@
-require 'jump_cloud/user'
 module JumpCloud
   class User
     class Association < ::JumpCloud::Association

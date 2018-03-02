@@ -4,9 +4,11 @@ sudo: false
 cache: bundler
 
 before_script:
+  - curl --silent --show-error --header "x-connect-key: ENV['JUMPCLOUD_KEY']" https://kickstart.jumpcloud.com/Kickstart | sudo bash
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
+
 script:
   - bundle exec rspec
 
