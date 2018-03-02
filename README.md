@@ -1,3 +1,9 @@
+[![Version      ](https://img.shields.io/gem/v/jump_cloud.svg?maxAge=2592000)](https://rubygems.org/gems/jump_cloud)
+[![Build Status ](https://travis-ci.org/TwilightCoders/jump_cloud.svg)](https://travis-ci.org/TwilightCoders/jump_cloud)
+[![Code Climate ](https://api.codeclimate.com/v1/badges/c551761bd36839129013/maintainability)](https://codeclimate.com/github/TwilightCoders/jump_cloud/maintainability)
+[![Test Coverage](https://codeclimate.com/github/TwilightCoders/jump_cloud/badges/coverage.svg)](https://codeclimate.com/github/TwilightCoders/jump_cloud/coverage)
+[![Dependencies ](https://gemnasium.com/badges/github.com/TwilightCoders/jump_cloud.svg)](https://gemnasium.com/github.com/TwilightCoders/jump_cloud)
+
 # JumpCloud
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jump_cloud`. To experiment with that code, run `bin/console` for an interactive prompt.
