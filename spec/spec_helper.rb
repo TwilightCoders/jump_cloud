@@ -1,11 +1,15 @@
 require 'bundler/setup'
-
 require 'pry'
-
 require 'dotenv'
+require 'simplecov'
+require 'jump_cloud'
+
 Dotenv.load
 
-require 'jump_cloud'
+SimpleCov.start do
+  add_filter "spec/"
+  add_filter "app/lib/thrift_client.rb" # this is generated from thrift
+end
 
 JumpCloud::Agent.install
 
