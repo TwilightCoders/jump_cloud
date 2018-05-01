@@ -8,12 +8,14 @@ Dotenv.load
 
 SimpleCov.start do
   add_filter "spec/"
-  add_filter "app/lib/thrift_client.rb" # this is generated from thrift
 end
 
 JumpCloud::Agent.install
 
-sleep 10
+20.times do
+  break unless JumpCloud::Agent.config.empty?
+  sleep 1
+end
 
 puts JumpCloud::Agent.config
 
