@@ -57,6 +57,11 @@
 *.tar
 *.zip
 
+# Text Editor Files #
+######################
+*.swp
+*.swn
+
 # Logs and databases #
 ######################
 *.log
