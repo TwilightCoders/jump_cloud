@@ -62,6 +62,10 @@
 *.swp
 *.swn
 
+# Rspec Files #
+######################
+.rspec_status
+
 # Logs and databases #
 ######################
 *.log
