@@ -4,6 +4,9 @@ module JumpCloud
       collection_path "usergroups"
       # attributes :id, :name
 
+      belongs_to :user
+
+      proxy :V2, JumpCloud::V2::API
     end
   end
 end

@@ -2,6 +2,7 @@ RSpec.describe JC::System::Group do
 
   it "Create a new System Group" do
     g = JumpCloud::System::Group.create(name: 'foo-to-delete')
+    expect(g).to_not be_nil
     g = JumpCloud::System::Group.find(g.id)
     expect(g.name).to eq('foo-to-delete')
     g.destroy

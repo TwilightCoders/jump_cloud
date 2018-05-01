@@ -1,4 +1,3 @@
-require 'pry'
 module JumpCloud
   module V1
     API = Her::API.new
@@ -9,6 +8,7 @@ module JumpCloud
 
       # Request
       # c.use Faraday::Request::UrlEncoded
+      c.use JumpCloud::Middleware::JSONRequest
 
       # Response
       # c.use Her::Middleware::DefaultParseJSON

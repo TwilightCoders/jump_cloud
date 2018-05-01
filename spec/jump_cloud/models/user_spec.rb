@@ -19,8 +19,7 @@ RSpec.describe JumpCloud::User do
 
   it "GET systems" do
     user = JumpCloud::User.find('5a982b04bcd080497a24b477')
-    systems = user.systems.fetch
-    binding.pry
+    systems = user.systems
     expect(user.email).to eq('dale@twilightcoders.net')
   end
 

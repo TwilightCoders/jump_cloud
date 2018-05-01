@@ -4,7 +4,7 @@ module JumpCloud
 
     class Authentication < Faraday::Middleware
       def call(env)
-        env[:request_headers]["x-api-key"] = ENV['JUMPCLOUD_KEY']
+        env[:request_headers]["x-api-key"] = JumpCloud.config.api_key
         # env[:request_headers]["x-api-key"] = RequestStore.store[:my_api_token]
         @app.call(env)
       end
@@ -21,8 +21,9 @@ module JumpCloud
       end
 
       def on_complete(env)
-        result = super
-        result
+        super.tap do
+          puts "status: #{env.status}"
+        end
       end
 
       private
@@ -30,7 +31,12 @@ module JumpCloud
       def clean_attributes(data)
         case data
         when Hash
-          data.except(:attributes)
+          return data if data.empty?
+          id = data.delete(:_id) || data.delete(:id)
+          ((attributes = data.delete(:attributes)) || data).merge({
+            id: (data.delete(:id) || id || fail("no id!")),
+            meta: attributes ? data : {}
+          })
         when Array
           data.collect { |d| clean_attributes(d) }
         end
