@@ -1,0 +1,5 @@
+version: '2'
+services:
+  gem:
+    build: .
+    command: bundle exec rspec
