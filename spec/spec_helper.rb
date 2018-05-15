@@ -2,13 +2,14 @@ require 'bundler/setup'
 require 'pry'
 require 'dotenv'
 require 'simplecov'
-require 'jump_cloud'
 
 Dotenv.load
 
 SimpleCov.start do
   add_filter "spec/"
 end
+
+require 'jump_cloud'
 
 JumpCloud::Agent.install
 
