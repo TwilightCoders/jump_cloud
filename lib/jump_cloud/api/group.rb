@@ -3,7 +3,7 @@ module JumpCloud
 
     def add(item)
       path = "#{self.request_path}/members"
-      self.class.put(path, {
+      self.class.post_raw(path, {
         op: "add",
         type: item.class.name.demodulize.downcase,
         id: item.id
