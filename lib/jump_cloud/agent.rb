@@ -4,10 +4,10 @@ module JumpCloud
     class << self
       def install(fetch: :curl)
         if system(install_cmd(fetch))
-          puts "Agent installed"
+          JumpCloud.logger.info "Agent installed"
         else
-          puts "Agent not installed. Check /opt/jc/jcagentInstall.log"
-          puts `cat /opt/jc/jcagentInstall.log`
+          JumpCloud.logger.warn "Agent not installed. Check /opt/jc/jcagentInstall.log"
+          JumpCloud.logger.info `cat /opt/jc/jcagentInstall.log`
         end
       end
 

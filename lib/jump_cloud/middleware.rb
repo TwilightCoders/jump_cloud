@@ -22,7 +22,7 @@ module JumpCloud
 
       def on_complete(env)
         super.tap do
-          puts "status: #{env.status}"
+          JumpCloud.logger.info "status: #{env.status}"
         end
       end
 
@@ -53,13 +53,13 @@ module JumpCloud
 
       # @private
       def call(env)
-        puts "#{env.method}: #{env.url.to_s}"
+        JumpCloud.logger.debug "#{env.method}: #{env.url.to_s}"
         add_header(env[:request_headers])
         unless env.method == :get
           env[:body] = encode env[:body] unless env[:body].respond_to?(:to_str)
         end
-        puts "params: #{env.params}"
-        puts "body: #{env.body}"
+        JumpCloud.logger.debug "params: #{env.params}"
+        JumpCloud.logger.debug "body: #{env.body}"
         @app.call(env)
       end
 
