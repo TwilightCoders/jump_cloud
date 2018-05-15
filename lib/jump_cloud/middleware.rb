@@ -1,4 +1,3 @@
-require 'pry'
 module JumpCloud
   module Middleware
 
