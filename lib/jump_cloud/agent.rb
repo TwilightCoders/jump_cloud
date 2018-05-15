@@ -35,7 +35,7 @@ module JumpCloud
           curl_flags = "--silent --show-error"
           curl_headers = "--header 'x-connect-key: #{JumpCloud.config.connect_key}'"
           exe = JumpCloud.config.install_sudo ? "sudo bash" : "bash"
-          "curl #{curl_flags} #{curl_headers} #{kick_start_url} | #{exe}"
+          "curl #{curl_flags} #{curl_headers} #{kick_start_url} | /usr/bin/env #{exe}"
         else
           fail "Not supported"
         end
