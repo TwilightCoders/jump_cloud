@@ -45,7 +45,8 @@ module JumpCloud
       api_key: ENV['JUMPCLOUD_API_KEY'],
       connect_key: ENV['JUMPCLOUD_CONNECT_KEY'],
       install_sudo: false,
-      install_command: :curl
+      install_command: :curl,
+      log_level: :warn
     }
 
     def self.root(*args)
