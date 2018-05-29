@@ -13,10 +13,7 @@ require 'jump_cloud'
 
 JumpCloud::Agent.install
 
-20.times do
-  break unless JumpCloud::Agent.config.empty?
-  sleep 1
-end
+abort("Agent failed to supply a System ID. Exiting.") unless JumpCloud::Agent.wait_for_init
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -28,5 +25,4 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
-
 end

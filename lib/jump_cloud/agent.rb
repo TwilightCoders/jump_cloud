@@ -3,12 +3,21 @@ module JumpCloud
 
     class << self
       def install(fetch: :curl)
+        puts "Installing JumpCloud agent"
         if system(install_cmd(fetch))
           JumpCloud.logger.info "Agent installed"
         else
           JumpCloud.logger.warn "Agent not installed. Check /opt/jc/jcagentInstall.log"
           JumpCloud.logger.info `cat /opt/jc/jcagentInstall.log`
         end
+      end
+
+      def wait_for_init
+        30.times do
+          return true unless config(cache: false)['systemKey'].nil?
+          sleep 5
+        end
+        return false
       end
 
       def system_id
