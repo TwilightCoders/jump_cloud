@@ -5,6 +5,7 @@ RUN apt-get -o Acquire::GzipIndexes=false update -qq && apt-get install -y \
 	libpq-dev \
 	nodejs \
 	curl \
+	vim \
 	apt-show-versions
 
 RUN mkdir /jump_cloud
