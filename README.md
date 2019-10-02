@@ -1,4 +1,4 @@
-[![Version      ](https://img.shields.io/gem/v/jump_cloud.svg?maxAge=2592000)](https://rubygems.org/gems/jump_cloud)
+[![Version      ](https://img.shields.io/gem/v/jump_cloud.svg)](https://rubygems.org/gems/jump_cloud)
 [![Build Status ](https://travis-ci.org/TwilightCoders/jump_cloud.svg)](https://travis-ci.org/TwilightCoders/jump_cloud)
 [![Code Climate ](https://api.codeclimate.com/v1/badges/c551761bd36839129013/maintainability)](https://codeclimate.com/github/TwilightCoders/jump_cloud/maintainability)
 [![Test Coverage](https://codeclimate.com/github/TwilightCoders/jump_cloud/badges/coverage.svg)](https://codeclimate.com/github/TwilightCoders/jump_cloud/coverage)
