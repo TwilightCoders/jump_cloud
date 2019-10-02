@@ -15,7 +15,7 @@ module JumpCloud
       c.use JumpCloud::Middleware::ResponseParser
 
       # Adapter
-      c.use Faraday::Adapter::NetHttp
+      c.adapter Faraday::Adapter::NetHttp
     end
   end
 
@@ -36,7 +36,7 @@ module JumpCloud
       # c.use Parser
 
       # Adapter
-      c.use Faraday::Adapter::NetHttp
+      c.adapter Faraday::Adapter::NetHttp
     end
   end
 end
